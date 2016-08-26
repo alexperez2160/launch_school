@@ -6,8 +6,12 @@ class Octal
   end 
   
   def to_decimal 
-    arr = str.split('').reverse.map(&:to_i)
-    arr.map.with_index{|num, index| num*(8**index)}.reduce(:+)
+    arr = str.split('').reverse
+    if arr.select{|part| part =~/[a-zA-Z]/}.size > 0
+      return 0 
+    else 
+      arr.map.with_index{|num, index| num.to_i*(8**index)}.reduce(:+)
+    end
   end 
 end 
 
