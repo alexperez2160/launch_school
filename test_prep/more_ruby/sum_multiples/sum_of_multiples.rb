@@ -12,14 +12,8 @@ class SumOfMultiples
 	def to(limit)
 		result = []
 		(0..(limit-1)).each do |number|
-			result << number if divisible_by_any_factor?(number)
+			result << number if @factors.any? {|factor| number % factor == 0 }
 		end 
 		result.reduce(&:+)
 	end
-	
-	def divisible_by_any_factor?(number)
-		@factors.any? {|factor| number % factor == 0 }
-
-	end 
 end 
-
