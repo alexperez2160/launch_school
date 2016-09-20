@@ -31,9 +31,3 @@ DEPENDENCIES
   puma
   sinatra (~> 1.4.7)
   sinatra-contrib
-
-RUBY VERSION
-   ruby 1.9.3p484
-
-BUNDLED WITH
-   1.13.1
