@@ -31,3 +31,9 @@ DEPENDENCIES
   puma
   sinatra (~> 1.4.7)
   sinatra-contrib
+
+RUBY VERSION
+   ruby 2.2.3p173
+
+BUNDLED WITH
+   1.13.1
