@@ -1,0 +1,19 @@
+
+	<h2> email </h2>
+	<p> <%= @user_info.fetch(params[:name].to_sym).fetch(:email)%> </p>
+	<h2> interests </h2>
+	<ul>
+		<li>
+			<%=@user_info.fetch(params[:name].to_sym).fetch(:interests).join(", ") %>
+		</li>
+	</ul>
+
+	<footer>
+	 <ul> 
+	 	<% @user_info.reject{|key, value| key == params[:name].to_sym}.each_key do |key| %> 
+	 	<ls> 
+	 		<a href="/<%=key%>"> <%= key.capitalize %> </a> 
+	 	</ls>
+	 	<% end %>
+	 </ul>  
+	</footer>
