@@ -1,6 +1,6 @@
 require "tilt/erubis"
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
 
 before do 
 	@contents = File.readlines("data/toc.txt") #saved as an array
@@ -29,11 +29,6 @@ end
 
 helpers do 
   
-	def in_paragraphs(text)
-	    text.split("\n\n").each_with_index.map do |line, index|
-	      "<p id=paragraph#{index}>#{line}</p>"
-	    end.join
-	end
 
   def each_chapter(&block)
   	@contents.each_with_index do |name, index|
